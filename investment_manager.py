@@ -6,22 +6,13 @@ class InvestmentManager:
         self.balance = self.initial_balance
 
     def handle_investment(self, firm, amount):
-        if firm not in self.stock_manager.firms:
-            return "Invalid firm selected."
+        if firm not in self.stock_manager.firms or amount > self.balance:
+            return "Invalid investment."
 
-        if amount > self.balance:
-            return "Insufficient balance for this investment."
-
-        share_price = self.stock_manager.firms[firm]
-        shares = amount / share_price
+        shares = amount / self.stock_manager.firms[firm]
         self.portfolio[firm] = self.portfolio.get(firm, 0) + shares
         self.balance -= amount
-
-        return f"Invested ${amount} in {firm}. Total shares in {firm}: {self.portfolio[firm]:.2f}"
-
-    def calculate_profit_loss(self):
-        total_value = sum(self.stock_manager.firms[firm] * shares for firm, shares in self.portfolio.items())
-        return total_value - (1000 - self.balance)
+        return f"Invested ${amount} in {firm}. Total shares: {self.portfolio[firm]:.2f}"
 
     def calculate_profit_loss(self):
         total_value = sum(self.stock_manager.firms[firm] * shares for firm, shares in self.portfolio.items())
@@ -35,5 +26,4 @@ class InvestmentManager:
                 return f"Profit added to balance. New balance: ${self.balance:.2f}"
             else:
                 return "You're in debt."
-        else:
-            return f"Current Balance: ${self.balance:.2f}\nProfit/Loss: ${profit_loss:.2f}"
+        return f"Current Balance: ${self.balance:.2f}\nProfit/Loss: ${profit_loss:.2f}"
