@@ -1,3 +1,5 @@
+import random
+
 class InvestmentManager:
     def __init__(self, stock_manager):
         self.stock_manager = stock_manager
@@ -13,6 +15,20 @@ class InvestmentManager:
         self.portfolio[firm] = self.portfolio.get(firm, 0) + shares
         self.balance -= amount
         return f"Invested ${amount} in {firm}. Total shares: {self.portfolio[firm]:.2f}"
+    
+    def sell_shares(self, firm, shares_to_sell):
+        if firm not in self.portfolio or self.portfolio[firm] < shares_to_sell:
+            return "Not enough shares to sell."
+
+        market_factor = random.uniform(0.9, 1.1)
+        sell_price_per_share = self.stock_manager.firms[firm] * market_factor
+        total_sell_amount = sell_price_per_share * shares_to_sell
+
+        self.portfolio[firm] -= shares_to_sell
+        self.balance += total_sell_amount
+
+        return f"Sold {shares_to_sell} shares of {firm} for ${total_sell_amount:.2f}"
+
 
     def calculate_profit_loss(self):
         total_value = sum(self.stock_manager.firms[firm] * shares for firm, shares in self.portfolio.items())
