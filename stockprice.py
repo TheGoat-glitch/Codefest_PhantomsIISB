@@ -3,22 +3,22 @@ import numpy as np
 import yfinance as yf
 import matplotlib.pyplot as plt
 
-# Download the Apple stock data
+# This will show the stock price of Apple.inc. When using this, its important to put the name of the company in the NYSE (New York Stock Exchange) name
 df = yf.download("AAPL")
 
-# Calculate the logarithmic returns
+# This shows the logarithmic returns compounded over time
 returns = np.log(1 + df['Adj Close'].pct_change())
 
-# Calculate the mean and standard deviation of returns
+# This calculates the mean and standard deviation and the simulated returns taking this into account
 mu, sigma = returns.mean(), returns.std()
 
 # Simulate the returns for the same number of trading days
 sim_rets = np.random.normal(mu, sigma, size=len(df) - 1)
 
-# Get the last closing price
+# This will get the last closing price
 initial = df['Adj Close'].iloc[-1]
 
-# Simulate the stock prices starting from the day after the last recorded day
+# This shows how the stock price will continue to either rise or fall after the closing price
 sim_prices = initial * (1 + sim_rets).cumprod()
 
 # Create a DataFrame for the simulated prices with the appropriate date index
@@ -28,7 +28,7 @@ simulated_df = pd.DataFrame({'Adj Close': sim_prices}, index=sim_dates)
 # Concatenate the real and simulated data
 combined_df = pd.concat([df['Adj Close'], simulated_df])
 
-# Plot the combined stock prices
+# The data gets plotted into a graph
 plt.plot(combined_df)
 plt.legend(['Real Prices', 'Simulated Prices'])
 plt.show()
