@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* This is the code for the main wide nav bar*/
+.navbar {
+    height: 100vh;
+    width: 300px;
+    background-color: #B4C5E4;
+    position: fixed;
+    left: 0; 
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    opacity: 8;
+    animation: slide-in 0.5s ease-in-out;
+}
+/*The slide animation on reload*/       
+@keyframes slide-in {
+    0% {
+        opacity: 8;
+        left: -250px;
+    }
+    100% {
+        opacity: 8;
+        left: 0;
+    }
+}
+  
+  
+  /*This is the code for the style of the buttons*/
+  .navbar a {
+    color: #090C9B;
+    border: 1px solid ;
+    color: #090C9B           ;
+    text-decoration: none;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px; /* This is the radisu of the corners of every button on the menu */
+  
+  }
+  
+  .content {
+    margin-left: 350px; /* Adjust this margin to accommodate the navbar width */
+  }
+  
+
+  /*-- LEVELS */
+
+  #lv1 {
+
+margin-left: 30%;
+margin-top: 12%;
+
+  }

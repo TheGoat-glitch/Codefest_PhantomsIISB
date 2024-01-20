@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockOverflow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img src="{{ url_for('static', filename='StockOverflow-logos_transparent.png') }}" alt="" width="150" height="60">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="Levels">
+        <a href="google.com">
+            <img src="{{ url_for('static', filename='html/Levels/Group 1.png') }}" id="lv1" width="120" height="120">
+        </a>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
