@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+from gui import StockMarketApp
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -18,8 +19,13 @@ def minigames():
 @app.route('/portfolio')
 def portfolio():
     return render_template('portfolio.html')
-    
-if __name__ == '__main__':
-    # Serve static files (CSS, JS, images, etc.)
-    app.run(debug=True)
 
+@app.route('/get_firms_info')
+def get_firms_info():
+    firms_info = app.stock_market_app.stock_manager.get_firms_info()
+    print('Type of firms_info:', type(firms_info))
+    return jsonify(firms_info)
+
+if __name__ == '__main__':
+    app.stock_market_app = StockMarketApp()
+    app.run(debug=True)
