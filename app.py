@@ -18,9 +18,7 @@ def minigames():
 @app.route('/portfolio')
 def portfolio():
     return render_template('portfolio.html')
-
-# ... other routes if needed ...
-
+    
 if __name__ == '__main__':
     # Serve static files (CSS, JS, images, etc.)
     app.run(debug=True)
