@@ -1,0 +1,203 @@
+root {
+  padding: 0;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* This is the code for the main wide nav bar*/
+.navbar {
+    height: 100vh;
+    width: 300px;
+    background-color: #B4C5E4;
+    position: fixed;
+    left: 0; 
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    opacity: 8;
+    animation: slide-in 0.5s ease-in-out;
+}
+/*The slide animation on reload*/       
+@keyframes slide-in {
+    0% {
+        opacity: 8;
+        left: -250px;
+    }
+    100% {
+        opacity: 8;
+        left: 0;
+    }
+}
+  
+  
+  /*This is the code for the style of the buttons*/
+  .navbar a {
+    color: #090C9B;
+    border: 1px solid ;
+    color: #090C9B           ;
+    text-decoration: none;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px; /* This is the radisu of the corners of every button on the menu */
+  
+  }
+  
+  .content {
+    margin-left: 350px; /* Adjust this margin to accommodate the navbar width */
+  }
+  
+
+  /*-- LEVELS */
+
+h1 {
+
+padding-left: 17%;
+
+}
+
+h3 {
+
+text-align: center;
+font-size: 30px;
+
+}
+
+h4 {
+
+text-align: center;
+font-size: 40px;
+
+}
+
+h5 {
+
+font-size: 200px;
+text-align: center;
+
+
+}
+
+
+
+/*Arrows*/
+
+.arrow-container {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+
+.left-arrow {
+  float: left;
+}
+
+.right-arrow {
+  float: right;
+}
+
+
+
+a {
+
+text-decoration: none;
+
+
+}
+
+iframe {
+
+padding-left: 50%;
+margin: 0 auto;
+display: block;
+
+}
+
+#divcan {
+
+text-align: center;
+
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.buttonext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; 
+  display: inline-block; 
+  padding: 10px 20px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; 
+  color: #333; 
+  text-decoration: none; 
+  cursor: pointer; 
+  font-family: sans-serif; 
+  font-weight: bold;
+}
+
+.nextbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  display:flex;
+  display: inline-block; /* Ensures proper spacing and alignment */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Removes default border */
+  border-radius: 12px; /* Applies the specified radius */
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Sets black background */
+  color: #fff; /* Sets white text color */
+  text-align: center; /* Centers text within the button */
+  text-decoration: none; /* Removes underline from links */
+  cursor: pointer; /* Indicates clickability */
+  font-family: sans-serif; /* Sets a clean font style */
+  font-weight: bold; /* Adds visual emphasis */
+
+}
+
+.buttonext-container {
+
+display: flex;
+
+}

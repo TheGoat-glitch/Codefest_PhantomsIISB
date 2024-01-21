@@ -1,60 +1,216 @@
+.logo {
+
+  padding-bottom: 5 px;
+
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: system-ui, sans-serif; /* Modern font stack */
+  background-color: #f3f5f7; /* Lighter background */
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-/* This is the code for the main wide nav bar*/
+
 .navbar {
-    height: 100vh;
-    width: 300px;
-    background-color: #B4C5E4;
-    position: fixed;
-    left: 0; 
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 40px;
-    opacity: 8;
-    animation: slide-in 0.5s ease-in-out;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  width: 300px;
+  background-color: #2e3440;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.8;
+  animation: slide-in 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  padding-top: 5px;
 }
-/*The slide animation on reload*/       
+
+#settings-button {
+  border: none; /* Removes all borders */
+}
+
+.navbar-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 20px); /* Adjust the value to leave some space at the bottom */
+  padding: 10px;
+}
+
+
+.navbar-scroll-container {
+  display: flex;
+  overflow-x: auto;
+}
+
 @keyframes slide-in {
-    0% {
-        opacity: 8;
-        left: -250px;
-    }
-    100% {
-        opacity: 8;
-        left: 0;
-    }
+  0% {
+      opacity: 0.8;
+      left: -250px;
+  }
+  100% {
+      opacity: 0.8;
+      left: 0;
+  }
 }
-  
-  
-  /*This is the code for the style of the buttons*/
-  .navbar a {
-    color: #090C9B;
-    border: 1px solid ;
-    color: #090C9B           ;
-    text-decoration: none;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 20px; /* This is the radisu of the corners of every button on the menu */
-  
-  }
-  
-  .content {
-    margin-left: 350px; /* Adjust this margin to accommodate the navbar width */
-  }
-  
 
-  /*-- LEVELS */
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+  border: 1px solid transparent; /* Clear border for visual separation */
+  padding: 10px 0;
+  text-align: center;
+  width: 75%;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 2px solid transparent; /* Clear border for visual separation */
+  border-style: outset; /* Add a small button outline */
+  border-color: #45a049; /* Adjust color as needed */
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
-  #lv1 {
+.navbar a:hover {
 
-margin-left: 30%;
-margin-top: 12%;
+  border-color: #388e3c; /* Darker color on hover */
 
-  }
+}
+
+.content {
+  margin-left: 350px; /* Adjust accordingly for navbar width */
+  padding: 30px; /* Increased padding for better readability */
+  max-width: 960px; /* Set a maximum width for content flow */
+  margin: 0 auto; /* Center content on larger screens */
+}
+
+h1 {
+  color: #2e3440; /* Consistent heading color */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add spacing for readability */
+}
+
+button {
+  background-color: #45a049; /* Green for primary actions */
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+#business-details-container,
+#revenue-details-container,
+#tasks-expenses-container,
+#saved-business-data-container {
+  background-color: #fff;
+  border: 1px solid #e5e5e5; /* Lighter border color */
+  padding: 30px; /* Increased padding */
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+#business-details-container input,
+#revenue-details-container input,
+#tasks-expenses-container input {
+  width: 100%;
+  padding: 12px 20px; /* Increased padding for inputs */
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+li input {
+  margin-left: 10px;
+}
+
+#saved-business-data-container p {
+  margin: 0;
+}
+
+#saved-business-data-container button {
+  background-color: #357ae8; /* Blue for secondary actions */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer
+}
+
+#saved-business-data-container button:hover {
+  background-color: #357ae8;
+}
+
+#lv1 {
+  margin-left: 30%;
+  margin-top: 12%;
+}
+
+#navbar-toggle-button,
+#navbar-slide-in-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 10px;
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.navbar.slide-out {
+  transform: translateX(-300px); 
+}
+
+#game-container {
+  max-width: 800px; /* Adjust the value as needed */
+  width: 100%;
+}
+
+#label-header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px; /* Add margin for spacing between buttons */
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green background color */
+  color: #fff; /* White text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+} 
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

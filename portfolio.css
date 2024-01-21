@@ -1,0 +1,120 @@
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #f3f5f7; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #2e3440; 
+    padding: 5px 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-top: 5px;
+
+}
+
+.navbar-scroll-container {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+    padding-top: 5px;
+  }
+
+  #settings-button {
+    border: none; /* Removes all borders */
+}
+  
+  .navbar a:hover {
+    color: #45a049;
+  }
+  
+  .content {
+    padding: 30px; 
+    max-width: 960px; 
+    margin: 0 auto;
+  }
+  
+  h1 {
+    color: #2e3440; /* Consistent heading color */
+    text-align: center; /* Center the heading for visual impact */
+    margin-bottom: 20px; /* Add spacing for better readability */
+  }
+  
+  button {
+    background-color: #45a049; /* Green for primary actions */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+  }
+  
+  .section-container {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  
+  .section-container input {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .section-container input:focus {
+    border-color: #45a049;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 15px;
+  }
+  
+  li input {
+    margin-left: 15px;
+  }
+  
+  #saved-business-data-container p {
+    margin: 0;
+  }
+  
+  #saved-business-data-container button {
+    background-color: #357ae8; /* Blue for secondary actions */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #saved-business-data-container button:hover {
+    background-color: #2a64ca; /* Darker blue on hover */
+  }
+  
