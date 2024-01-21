@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market Simulation Game - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Stock Market Simulation Game</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('view_firms') }}">View Firms</a></li>
+            <li><a href="{{ url_for('invest') }}">Invest in Shares</a></li>
+            <li><a href="{{ url_for('sell_shares') }}">Sell Shares</a></li>
+            <li><a href="{{ url_for('view_portfolio') }}">View Your Portfolio</a></li>
+            <li><a href="{{ url_for('track_revenue') }}">Track Revenue</a></li>
+            <li><a href="{{ url_for('update_prices') }}">Update Stock Prices</a></li>
+            <li><a href="{{ url_for('display_news') }}">Display Market News</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>Stock Market Simulation Game © 2024</p>
+    </footer>
+</body>
+</html>
